@@ -4,4 +4,7 @@ RUN apt-get install build-essential -y
 RUN apt-get install graphviz -y
 RUN conda update -n base -c defaults conda
 RUN conda install git
+RUN apt-get -qq update
+RUN apt-get install -qqy python3-setuptools python3-docutils python3-flask
 RUN pip install snakemake
+RUN pip install psutil
