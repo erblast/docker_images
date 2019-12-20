@@ -1,4 +1,4 @@
-FROM erblast/r_conda:latest
+FROM erblast/r_conda:3.6.1
 RUN apt-get update
 RUN apt-get install build-essential -y
 RUN apt-get install graphviz -y

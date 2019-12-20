@@ -1,9 +1,15 @@
-FROM rocker/verse:3.6.0
+FROM rocker/verse:3.6.1
 
 #  $ docker build . -t continuumio/miniconda3:latest -t continuumio/miniconda3:4.5.11
 #  $ docker run --rm -it continuumio/miniconda3:latest /bin/bash
 #  $ docker push continuumio/miniconda3:latest
 #  $ docker push continuumio/miniconda3:4.5.11
+
+# Add some standard R packages that are mising from the rocker distribution
+RUN R -e "remotes::install_version('future', repos='http://cran.us.r-project.org', version= '1.14.0', upgrade = 'never' )"
+RUN R -e "remotes::install_version('furrr' , repos='http://cran.us.r-project.org', version= '0.1.0' , upgrade = 'never' )"
+RUN R -e "remotes::install_version('sinew' , repos='http://cran.us.r-project.org', version= '0.3.8' , upgrade = 'never' )"
+RUN R -e "remotes::install_version('plotly', repos='http://cran.us.r-project.org', version= '4.9.0' , upgrade = 'never' )"
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
