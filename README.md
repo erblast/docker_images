@@ -1,4 +1,4 @@
-# docker_images ![](https://img.shields.io/docker/automated/rocker/r-ver.svg)
+# docker_images <img src="https://img.shields.io/docker/automated/rocker/r-ver.svg" alt="logo" align = "right"/>  
 collection of rocker-based docker images. Uses the same versioning as the rocker images.
 
 #### r_conda
