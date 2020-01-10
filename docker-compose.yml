@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  shell:
+    image: 'erblast/r_conda:latest'
+    working_dir: /app
+    # make container wait
+    command: tail -F anything
+    volumes: 
+      - '.:/app'
+  rstudio:
+    image: 'erblast/r_conda:latest'
+    ports: 
+      - '8989:8787'
+    volumes: 
+      - '.:/home/rstudio/app'
+    command: /init
+    environment:
+      PASSWORD: '123'
+      USER: 'rstudio'
+  

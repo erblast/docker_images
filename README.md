@@ -13,3 +13,16 @@ r_conda + snakemake
 r_conda + snakemake + oetteR + easyalluvial + some tidymodels packages  
 (currently incompatible with dplyr 1.0.0), will not be upgraded until oetteR becomes compatible  
 [build report](https://hub.docker.com/repository/docker/erblast/r_conda_snakemake_pkgs/builds)
+
+
+# docker compose
+
+start 2 containers one for Rstudio and one for shell
+
+[localhost:8989](localhost:8989)
+
+```
+docker-compose up -d
+docker container exec -it docker_images_shell_1 /bin/bash
+docker-compose down
+```
